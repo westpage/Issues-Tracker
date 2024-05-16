@@ -1,0 +1,266 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./output.css">
+  <!-- Google Montserrat Font Link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Google Assistance Font Link -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Montserrat", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+p,a,li,span{
+  font-family: "Assistant", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+  </style>
+
+</head>
+
+<body onload="fetchIssueList()" class="bg-stone-100 relative">
+  <nav class="w-full fixed bg-[#003C43] shadow-md z-30 border-b">
+    <div class="w-full py-4 px-4 md:px-8  flex items-center">
+      <div class="w-full">
+        <h1 class="w-full flex flex-col justify-start items-start text-2xl text-stone-100 font-extrabold">Issues Tracker
+          <span class="text-sm text-[#77b0aaa8] font-semibold  mt-1">by SimpleBoyWest 🧐</span></h1>
+      </div>
+
+      <div class="flex items-end justify-end">
+        <button class="w-10 h-10 rounded-full overflow-hidden p-1 font-semibold text-5xl bg-[#77b0aaa8]">
+          <img src="./assets/west.jpg" class="w-full object-full ovject-center rounded-full shadow-xl" alt="">
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+  <main id="issuesWrapper" class="w-full relative pt-20 flex flex-col items-start">
+
+
+
+
+
+    <section
+      class="w-full lg:max-w-[30%] h-full lg:h-[80vh] lg:fixed bg-stone-100 border-r-2 shadow-inner z-0 px-4 md:px-8 py-10">
+     <div class="w-full flex items-center justify-between">
+      <h3 class="text-xl text-stone-700 font-bold">Quick Actions</h3>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+      </svg>
+     </div>
+      
+      <div class="w-full flex items-start justify-start">
+
+        <div class="w-full py-6 grid grid-cols-2 gap-4">
+
+          <div
+            class="w-full border border-stone-200 bg-white shadow hover:shadow-xl hover:bg-stone-50 rounded-bl-xl rounded-tr-xl px-4 py-4 flex flex-col items-start justify-between">
+            <div>
+              <h5 class="text-base text-stone-600 font-bold">Add New Issue</h5>
+              <p class="text-xs text-stone-600 mt-2">Add new issues to your catalog</p>
+            </div>
+
+            <button id="addIssueBtn"
+              class="w-fit flex items-center justify-center gap-2 mt-6 bg-[#77B0AA] hover:bg-[#003C43] text-blue-50 text-xs font-semibold px-4 py-3 rounded-sm hover:shadow">
+             <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+            </span> Add New Issue</button>
+          </div>
+
+
+          <div
+            class="w-full border border-stone-200 bg-white shadow hover:shadow-xl hover:bg-stone-50 rounded-bl-xl rounded-tr-xl px-4 py-4 flex flex-col items-start justify-between">
+            <div>
+              <h5 class="text-base text-stone-600 font-bold">Closed Issues</h5>
+              <p class="text-xs text-stone-600 mt-2">View all Issues closed from your catalog</p>
+            </div>
+
+            <button id="closedIssues"
+              class="w-fit flex items-center justify-center gap-2 mt-6 bg-stone-600 hover:bg-stone-500 text-stone-50 text-xs font-semibold px-4 py-3 rounded-sm hover:shadow"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+              </svg>
+            
+              Closed Issues</button>
+          </div>
+          <div
+            class="w-full mt-4 border border-stone-200 bg-white shadow hover:shadow-xl hover:bg-stone-50 rounded-bl-xl rounded-tr-xl px-4 py-4 flex flex-col items-start justify-between">
+            <div>
+              <h5 class="text-base text-stone-600 font-bold">Approved Issues</h5>
+              <p class="text-xs text-stone-600 mt-2">View all your approved issues on your catalog</p>
+            </div>
+
+            <button id="approvedIssues"
+              class="w-fit flex items-center justify-center gap-2 mt-6 bg-[#003C43] hover:bg-green-400 text-green-50 text-xs font-semibold px-4 py-3 rounded-sm hover:shadow"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+              </svg>
+              
+              Approved Issues</button>
+          </div>
+
+
+
+
+
+          <div
+            class="w-full mt-4  borde2 border-stone-100 bg-white shadow hover:shadow-xl hover:bg-stone-50 rounded-bl-xl rounded-tr-xl px-4 py-4 flex flex-col items-start justify-between">
+            <div>
+              <h5 class="text-base text-stone-600 font-bold">Deleted Issues</h5>
+              <p class="text-xs text-stone-600 mt-2">View your deleted issues</p>
+            </div>
+
+            <button id="deletedIssues"
+              class="w-fit flex items-center justify-center gap-2 mt-4 bg-red-600 hover:bg-red-500 text-red-50 text-xs font-semibold px-4 py-3 rounded-md  hover:shadow"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+              </svg>
+              Deleted
+              Issues</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section class="w-full lg:max-w-[70%] ml-0 lg:ml-[30%] relative">
+      <div class="w-full bg-stone-100 shadow-inner lg:py-10">
+
+        <div
+          class="w-full bg-[#003C43]  shadow-inner px-4 md:px-8 lg:fixed lg:top-20 z-10 flex flex-col md:flex-row  items-center text-center lg:text-left justify-center gap-4 lg:justify-between py-10">
+          <h2 class="w-full text-xl text-stone-100 font-bold">List of Issues:</h2>
+          <div class="w-full flex items-center justify-center lg:justify-start gap-2">
+            <button id="all" class="bg-[#003C43] text-stone-200 px-4 py-1 text-xs font-semibold rounded-xl">All</button>
+            <button id="lowIssues" class="bg-stone-100 px-4 py-1 text-xs font-semibold rounded-xl">Low</button>
+            <button id="mediumIssues" class="bg-stone-100 px-4 py-1 text-xs font-semibold rounded-xl">Medium</button>
+            <button id="highIssues" class="bg-stone-100 px-4 py-1 text-xs font-semibold rounded-xl">High</button>
+          </div>
+        </div>
+
+        <div class="w-full bg-stone-50  shadow-inner rounded-xl border h-full py-20  flex flex-col relative">
+          <div id="issuesContainer" class="w-full flex flex-wrap items-start gap-2 justify-around pt-2 px-4 md:pt-14 pb-20">
+
+          </div>
+          <div class="absolute w-full flex h-full items-center justify-center text-2xl font-bold top-20">
+            <h2 id="emptyContainer" class="w-52 mx-auto"></h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+  </main>
+
+
+
+
+  <!-- Modal Component -->
+  <section id="modalOverlay"
+    class="w-full h-screen fixed  top-0 left-0 right-0 bottom-0 z-50 bg-black bg-opacity-80 px-4 py-10 md:px-8 md:py-20 lg:px-10 lg:py-24 hidden items-center justify-center">
+    <div class="w-full md:max-w-xl mx-auto h-full px-4 flex items-center justify-center">
+      <div id="formSection"
+        class="w-full lg:max-w-md mx-auto bg-white rounded-sm shadow-2xl border  px-2 py-4 relative">
+        <div class="w-full px-4 md:px-6">
+
+          <div class="w-fullbg-stone-50 flex items-center justify-end">
+            <p id="closeForm"
+              class="hover:shadow-xl w-8 h-8 flex items-center justify-center ">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+              
+              </p>
+          </div>
+          <h3 class="text-xl md:text-2xl font-semibold mt-2">Create New Issue</h3>
+          <p class="py-2 text-sm text-stone-500">Add new Issue to your catalog...</p>
+
+          <div id="successMsg" class="w-full bg-green-100 hidden shadow-sm border  rounded-md py-4  px-4">
+            <p class="text-sm text-stone-600">Issue Added Successfully...</p>
+          </div>
+
+        </div>
+        <form class="w-full bg-white rounded-sm mt-4 px-4 md:px-6" id="issueInputForm">
+
+
+          <div class="mt-2 p-1 hidden">
+            <label for="issueUpload" class="text-md text-stone-900 font-semibold">Upload your file*</label>
+
+            <input type="file" placeholder="Describe the issue...."
+              class="w-full mt-3 text-stone-600 placeholder:text-stone-500 placeholder:text-xs py-2 px-4 bg-white border-2 border-stone-200">
+          </div>
+          <div class="mt-2 p-1">
+            <label for="issueDescriptionInput" class="text-md text-stone-900 font-semibold">Description*</label>
+
+            <input type="text" id="issueDescriptionInput" placeholder="Describe the issue...."
+              class="w-full mt-3 text-stone-600 placeholder:text-stone-500 placeholder:text-xs py-2 px-4 bg-white border-2 border-stone-200">
+          </div>
+
+          <div class="mt-4 p-1">
+            <label for="issueSeverityInput" class="text-md text-stone-800 font-semibold">Severity*</label>
+
+
+            <select id="issueSeverityInput"
+              class="w-full mt-3 text-stone-600 placeholder:text-stone-500 text-sm py-2 px-4 bg-white border-2 border-stone-200">
+              <option value="Low" clas>Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+
+          <div class="mt-4 p-1">
+            <label for="issueAssignedToInput" class="text-md text-stone-800 font-semibold">Assigned To*</label>
+
+            <input type="text" id="issueAssignedToInput" placeholder="Enter Responsible"
+              class="w-full mt-2 text-stone-600 placeholder:text-stone-500 placeholder:text-xs py-2 px-4 bg-white border-2 border-stone-200">
+          </div>
+
+          <div class="w-full mt-10 mb-4 p-1">
+            <button type="submit" id="formAddBtn"
+              class="w-full bg-[#003C43] hover:bg-green-400 text-white font-semibold px-8 py-3 rounded-sm">Add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="w-full bg-[#003C43] fixed bottom-0 flex items-center justify-center z-50 py-4 px-4 md:px-14">
+    <p class="text-sm text-[#77B0AA] font-semibold">@SimpleBoyWest</p>
+  </footer>
+
+
+
+  <script src="http://chancejs.com/chance.min.js"></script>
+  <script src="/public/app.js"></script>
+</body>
+
+</html>
