@@ -66,11 +66,11 @@ p,a,li,span{
 </head>
 
 <body onload="fetchIssueList()" class="relative">
-  <nav class="w-full fixed bg-green  z-30 border-b">
+  <nav class="w-full fixed bg-white shadow-md  z-30">
     <div class="w-full py-4 px-4 md:px-8  flex items-center">
       <div class="w-full">
-        <h1 class="w-full flex flex-col justify-start items-start text-2xl text-stone-100 font-extrabold">Issues Tracker
-          <span class="text-sm text-[#C4DFDF] font-mono font-semibold  mt-1">by SimpleBoyWest 🧐</span></h1>
+        <h1 class="w-full flex flex-col justify-start items-start text-xl text-stone-800 font-bold">Issues Tracker
+          <span class="text-sm text-[#0D9276] font-semibold  mt-1">by SimpleBoyWest 🧐</span></h1>
       </div>
 
       <div class="flex items-end justify-end">
@@ -94,10 +94,10 @@ p,a,li,span{
 
 
     <section
-      class="w-full  lg:max-w-[45%] xl:max-w-[30%]  bg-stone-50  h-full lg:h-[120vh] lg:fixed overflow-scroll  z-0 px-4 md:px-8 py-10">
+      class="w-full  lg:max-w-[45%] xl:max-w-[30%]  bg-gray-100  h-full lg:h-[120vh] lg:fixed  z-0 px-4 md:px-8 py-10">
      
      <div class="w-full flex items-center justify-between">
-      <h3 class="text-xl text-stone-700 font-bold">Quick Actions</h3>
+      <h3 class="text-lg text-stone-700 font-bold">Quick Actions</h3>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
       </svg>
@@ -108,9 +108,9 @@ p,a,li,span{
         <div class="w-full py-6 grid grid-cols-2  gap-4">
 
           <div
-            class="w-full md:max-w-[280px] lg:max-w-full border border-stone-200 bg-white shadow-sm hover:shadow-lg hover:bg-stone-50 rounded-bl-xl rounded-tr-xl px-4 py-4 flex flex-col items-start justify-between">
+            class="w-full lg:max-w-full border border-stone-200 bg-white shadow-sm hover:shadow-lg hover:bg-stone-50 rounded-bl-xl rounded-tr-xl px-4 py-4 flex flex-col items-start justify-between">
             <div>
-              <h5 class="text-base text-stone-600 font-bold">Add New Issue</h5>
+              <h5 class="text-sm text-stone-600 font-bold">Add New Issue</h5>
               <p class="text-xs text-stone-500 font-medium mt-2">Add new issues to your catalog</p>
             </div>
 
@@ -124,9 +124,9 @@ p,a,li,span{
 
 
           <div
-            class="w-full md:max-w-[280px] lg:max-w-full border border-stone-200 bg-white shadow-sm hover:shadow-lg hover:bg-stone-50 rounded-bl-xl rounded-tr-xl px-4 py-4 flex flex-col items-start justify-between">
+            class="w-full lg:max-w-full border border-stone-200 bg-white shadow-sm hover:shadow-lg hover:bg-stone-50 rounded-bl-xl rounded-tr-xl px-4 py-4 flex flex-col items-start justify-between">
             <div>
-              <h5 class="text-base text-stone-600 font-bold">Closed Issues</h5>
+              <h5 class="text-sm text-stone-600 font-bold">Closed Issues</h5>
               <p class="text-xs text-stone-500 font-medium mt-2">View all Issues closed from your catalog</p>
             </div>
 
@@ -138,9 +138,9 @@ p,a,li,span{
               Closed Issues</button>
           </div>
           <div
-            class="w-full md:max-w-[280px] lg:max-w-full mt-4 border border-stone-200 bg-white shadow-sm hover:shadow-lg hover:bg-stone-50 rounded-bl-xl rounded-tr-xl px-4 py-4 flex flex-col items-start justify-between">
+            class="w-full lg:max-w-full mt-4 border border-stone-200 bg-white shadow-sm hover:shadow-lg hover:bg-stone-50 rounded-bl-xl rounded-tr-xl px-4 py-4 flex flex-col items-start justify-between">
             <div>
-              <h5 class="text-base text-stone-600 font-bold">Approved Issues</h5>
+              <h5 class="text-sm text-stone-600 font-bold">Approved Issues</h5>
               <p class="text-xs text-stone-500 font-medium mt-2">View all your approved issues on your catalog</p>
             </div>
 
@@ -157,9 +157,9 @@ p,a,li,span{
 
 
           <div
-            class="w-full md:max-w-[280px] lg:max-w-full mt-4 border border-stone-200 bg-white shadow-sm hover:shadow-lg hover:bg-stone-50 rounded-bl-xl rounded-tr-xl px-4 py-4 flex flex-col items-start justify-between">
+            class="w-full lg:max-w-full mt-4 border border-stone-200 bg-white shadow-sm hover:shadow-lg hover:bg-stone-50 rounded-bl-xl rounded-tr-xl px-4 py-4 flex flex-col items-start justify-between">
             <div>
-              <h5 class="text-base text-stone-600 font-bold">Deleted Issues</h5>
+              <h5 class="text-sm text-stone-600 font-bold">Deleted Issues</h5>
               <p class="text-xs text-stone-500 font-medium mt-2">View your deleted issues</p>
             </div>
 
@@ -183,13 +183,13 @@ p,a,li,span{
 
 
     <section class="w-full  lg:max-w-[55%] xl:max-w-[70%] ml-0 lg:ml-[45%] xl:ml-[30%]   bg-stone-100 relative">
-      <div class="w-full lg:py-10 ">
+      <div class="w-full">
 
         <div
-          class="w-full lg:max-w-[55%] xl:max-w-[70%] ml-0 lg:ml-[45%] xl:ml-[30%] bg-[#C4DFDF] lg:fixed lg:top-[90px]    left-0 right-0 z-10 px-4 md:px-8  flex items-center justify-between py-5">
-          <h2 class="w-44 text-xl text-stone-600 font-bold">List of Issues:</h2>
+          class="w-full lg:max-w-[55%] xl:max-w-[70%] ml-0 lg:ml-[45%] xl:ml-[30%] bg-white  lg:fixed lg:top-    left-0 right-0 z-10 px-4 md:px-8  flex items-center justify-between py-5">
+          <h2 class="w-44 text-lg text-[#202e2e] font-bold">List of Issues:</h2>
           <div class="w-44 flex items-center justify-end">
-          <select name="select" id="" class="pl-2  py-2 rounded-md hover:shadow-xl font-semibold text-sm text-neutral-500">
+          <select name="select" id="" class="pl-2  py-2 bg-[#C4DFDF] rounded-md hover:shadow-xl font-semibold text-sm text-neutral-500">
             <option value="All" id="allIssues" class="font-semibold">All</option>
             <option value="All" id="lowIssues" class="font-semibold">Medium</option>
             <option value="All" id="highIssues" class="font-semibold">High</option>
