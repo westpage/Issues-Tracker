@@ -681,6 +681,10 @@ video {
   margin-top: 1.5rem;
 }
 
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
 .flex {
   display: flex;
 }
@@ -956,11 +960,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-stone-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 250 249 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-80 {
   --tw-bg-opacity: 0.8;
 }
@@ -1058,8 +1057,8 @@ video {
   line-height: 1;
 }
 
-.text-\[i4px\] {
-  font-size: i4px;
+.text-\[12px\] {
+  font-size: 12px;
 }
 
 .text-base {
@@ -1089,10 +1088,6 @@ video {
 
 .text-\[10px\] {
   font-size: 10px;
-}
-
-.text-\[12px\] {
-  font-size: 12px;
 }
 
 .font-bold {
@@ -1231,22 +1226,6 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.placeholder\:text-\[i4px\]::-moz-placeholder {
-  font-size: i4px;
-}
-
-.placeholder\:text-\[i4px\]::placeholder {
-  font-size: i4px;
-}
-
-.placeholder\:text-\[10px\]::-moz-placeholder {
-  font-size: 10px;
-}
-
-.placeholder\:text-\[10px\]::placeholder {
-  font-size: 10px;
-}
-
 .placeholder\:text-\[12px\]::-moz-placeholder {
   font-size: 12px;
 }
@@ -1367,10 +1346,6 @@ video {
   .md\:py-20 {
     padding-top: 5rem;
     padding-bottom: 5rem;
-  }
-
-  .md\:pt-12 {
-    padding-top: 3rem;
   }
 
   .md\:pt-20 {
