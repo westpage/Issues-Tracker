@@ -1,0 +1,8 @@
+
+
+TASKS TONIGHT
+0...Filter Issues Functionality
+1....Create Close Functionality
+2....Delete Function
+3....View Closed Issues Functionality
+4....Color Enhancement
